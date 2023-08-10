@@ -74,6 +74,7 @@ const Tables = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get('/records'); 
+        console.log(response.data)
         setAuthors(response.data);
       } catch (error) {
         console.error('Error fetching records:', error);
