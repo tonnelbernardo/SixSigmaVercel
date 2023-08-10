@@ -11,6 +11,7 @@ const ListRecords = () => {
   const fetchRecords = async () => {
     try {
       const response = await axios.get('/records'); // Atualize a URL com a porta correta
+      console.log(response.data);
       setRecords(response.data);
     } catch (error) {
       console.error('Error fetching records:', error);
