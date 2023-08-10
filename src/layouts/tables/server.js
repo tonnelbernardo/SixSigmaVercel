@@ -20,7 +20,7 @@ const produtoSchema = new mongoose.Schema({
 const Produto = mongoose.model('Clients', produtoSchema);
 
 app.use(express.json());
-app.use(cors({ origin: 'https://six-sigma-vercel-iisk.vercel.app', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
 
 // Rota para criar um novo produto
 app.post('/records', async (req, res) => {

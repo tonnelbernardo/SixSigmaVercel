@@ -29,7 +29,7 @@ const UpdateRecord = ({ recordId, initialData, onUpdate }) => {
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/records/${recordId}`, formData);
+      await axios.put(`http://localhost:2999/records/${recordId}`, formData);
       onUpdate(recordId, formData);
       handleCloseModal();
     } catch (error) {

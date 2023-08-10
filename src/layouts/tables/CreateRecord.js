@@ -30,7 +30,7 @@ const CreateRecord = ({ onRecordCreated }) => {
 
   const handleCreate = async () => {
     try {
-      const response = await axios.post('/records', formData);
+      const response = await axios.post('http://localhost:2999/records', formData);
       onRecordCreated(response.data);
       handleCloseModal();
     } catch (error) {
