@@ -10,7 +10,7 @@ const ListRecords = () => {
 
   const fetchRecords = async () => {
     try {
-      const response = await axios.get('http://localhost:2999/records'); 
+      const response = await axios.get('http://localhost:2999/api/records'); 
       console.log(response.data);
       setRecords(response.data);
     } catch (error) {

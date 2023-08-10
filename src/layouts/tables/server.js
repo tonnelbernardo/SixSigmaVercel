@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:2999', credentials: true }));
 
 // Rota para criar um novo produto
-app.post('/records', async (req, res) => {
+app.post('/api/records', async (req, res) => {
     try {
       const { name, age, email } = req.body;
   
@@ -49,7 +49,7 @@ app.post('/records', async (req, res) => {
     }
   });
 
-  app.put('/records/:id', async (req, res) => {
+  app.put('/api/records/:id', async (req, res) => {
     try {
       const { name, age, email } = req.body;
       const updatedRecord = { nome: name, idade: parseInt(age), email };
@@ -73,7 +73,7 @@ app.post('/records', async (req, res) => {
 
 
 
-  app.delete('/records/:id', async (req, res) => {
+  app.delete('/api/records/:id', async (req, res) => {
     try {
       const produtoDeletado = await Produto.findByIdAndDelete(req.params.id);
   
@@ -88,7 +88,7 @@ app.post('/records', async (req, res) => {
     }
   });
   
-  app.get('/records', async (req, res) => {
+  app.get('/api/records', async (req, res) => {
     try {
       const registros = await Produto.find({});
       res.setHeader('Content-Type', 'application/json'); // Definindo o Content-Type para JSON

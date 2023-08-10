@@ -73,7 +73,7 @@ const Tables = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('/records'); 
+        const response = await axios.get('api/records'); 
         console.log(response.data)
         setAuthors(response.data);
       } catch (error) {

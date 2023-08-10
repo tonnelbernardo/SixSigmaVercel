@@ -12,7 +12,7 @@ const EditForm = ({ recordId, onUpdate }) => {
   const handleUpdateRecord = async () => {
     const updatedRecord = { name: nome, age: idade, email: email };
     try {
-      const response = await axios.put(`/records/${recordId}`, updatedRecord);
+      const response = await axios.put(`/api/records/${recordId}`, updatedRecord);
       onUpdate(recordId, response.data);
       setNome('');
       setIdade('');
