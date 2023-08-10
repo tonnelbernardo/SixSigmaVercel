@@ -12,7 +12,7 @@ const CreateForm = ({ onRecordCreated }) => {
   const handleCreateRecord = async () => {
     const newRecord = { nome, idade, email };
     try {
-      const response = await axios.post('http://localhost:2999/records', newRecord);
+      const response = await axios.post('/records', newRecord);
       onRecordCreated(response.data);
       setNome('');
       setIdade('');

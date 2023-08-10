@@ -5,7 +5,6 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 import { createTheme, styled } from '@mui/material';
-import { Button, Modal, Box, Typography, TextField } from '@mui/material';
 
 import CreateRecord from './CreateRecord';
 import UpdateRecord from './UpdateRecord';
@@ -74,7 +73,7 @@ const Tables = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:2999/records'); 
+        const response = await axios.get('/records'); 
         setAuthors(response.data);
       } catch (error) {
         console.error('Error fetching records:', error);

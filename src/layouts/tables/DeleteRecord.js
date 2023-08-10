@@ -16,7 +16,7 @@ const DeleteRecord = ({ recordId, onDelete }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:2999/records/${recordId}`);
+      await axios.delete(`/records/${recordId}`);
       onDelete(recordId);
       handleCloseModal();
     } catch (error) {

@@ -10,7 +10,7 @@ const ListRecords = () => {
 
   const fetchRecords = async () => {
     try {
-      const response = await axios.get('http://localhost:2999/records'); // Atualize a URL com a porta correta
+      const response = await axios.get('/records'); // Atualize a URL com a porta correta
       setRecords(response.data);
     } catch (error) {
       console.error('Error fetching records:', error);
