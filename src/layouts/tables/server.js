@@ -83,6 +83,7 @@ app.post('/records', async (req, res) => {
   app.get('/records', async (req, res) => {
     try {
       const registros = await Produto.find({});
+      res.setHeader('Content-Type', 'application/json'); // Definindo o Content-Type para JSON
       res.json(registros);
     } catch (error) {
       console.error(error);
