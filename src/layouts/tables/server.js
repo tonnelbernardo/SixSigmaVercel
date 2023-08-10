@@ -11,6 +11,14 @@ mongoose.connect(process.env.MONGODB_URI, {
   useUnifiedTopology: true,
 });
 
+mongoose.connection.on('connected', () => {
+  console.log('Conexão com o MongoDB estabelecida');
+});
+
+mongoose.connection.on('error', (err) => {
+  console.error('Erro na conexão com o MongoDB:', err);
+});
+
 const produtoSchema = new mongoose.Schema({
   nome: String,
   idade: Number,
