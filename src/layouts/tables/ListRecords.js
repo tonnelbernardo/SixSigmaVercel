@@ -9,7 +9,12 @@ const app = express();
 const PORT = 2999;
 
 // Conexão com o MongoDB
-mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net', {
+
+
+
+const ListRecords = () => {
+
+  mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -34,7 +39,6 @@ app.use(express.json());
 app.use(cors({ origin: 'http://localhost:2999', credentials: true }));
 
 
-const ListRecords = () => {
   const [records, setRecords] = useState([]);
 
   useEffect(() => {
