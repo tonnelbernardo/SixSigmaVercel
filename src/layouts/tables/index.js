@@ -73,7 +73,7 @@ const Tables = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:2999/api/records'); 
+        const response = await axios.get('https://six-sigma-vercel-iisk-fi7e9yl6s-tonnelbernardo.vercel.app/api/records'); 
         console.log(response.data)
         setAuthors(response.data);
       } catch (error) {
