@@ -5,8 +5,8 @@ const cors = require('cors');
 const app = express();
 const PORT = 2999;
 
-// Conexão com o MongoDB    ===== mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net/', {
-  mongoose.connect(process.env.MONGODB_URI, {
+// Conexão com o MongoDB    ===== mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net/', {  ---------------- mongoose.connect(process.env.MONGODB_URI, {
+  mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net/', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
