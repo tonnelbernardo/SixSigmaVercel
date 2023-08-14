@@ -5,8 +5,8 @@ const cors = require('cors');
 const app = express();
 const PORT = 2999;
 
-// Conexão com o MongoDB
-mongoose.connect(process.env.MONGODB_URI, {
+// Conexão com o MongoDB    ===== mongoose.connect('mongodb+srv://mongol:sixsigma123@sixsigmacluster.jgaedll.mongodb.net/', {
+  mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -28,7 +28,8 @@ const produtoSchema = new mongoose.Schema({
 const Produto = mongoose.model('Clients', produtoSchema);
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:2999', credentials: true }));
+app.use(cors({ origin: 'http://localhost:3000', credentials: true }));
+
 
 // Rota para criar um novo produto
 app.post('/api/records', async (req, res) => {
@@ -91,7 +92,7 @@ app.post('/api/records', async (req, res) => {
   app.get('/api/records', async (req, res) => {
     try {
       const registros = await Produto.find({});
-      res.setHeader('Content-Type', 'application/json'); // Definindo o Content-Type para JSON
+     // res.setHeader('Content-Type', 'application/json'); // Definindo o Content-Type para JSON
       res.json(registros);
     } catch (error) {
       console.error(error);
