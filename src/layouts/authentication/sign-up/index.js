@@ -42,7 +42,7 @@ const bgImage =
       event.preventDefault();
       try {
         const { data } = await axios.post(
-          "http://localhost:4000/api/login",
+          "http://localhost:4000/api/register",
           {
             ...values,
           },
