@@ -79,6 +79,7 @@ const bgImage =
           <form action="POST" onSubmit={handleSubmit}> {/* Usar onSubmit aqui */}
             <ArgonBox mb={2}>
               <ArgonInput
+                name="email" 
                 type="email"
                 onChange={(e) =>
                   setValues({ ...values, [e.target.name]: e.target.value })
@@ -89,6 +90,7 @@ const bgImage =
             </ArgonBox>
             <ArgonBox mb={2}>
               <ArgonInput
+                name="password"
                 type="password"
                 onChange={(e) =>
                   setValues({ ...values, [e.target.name]: e.target.value })
