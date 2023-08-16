@@ -40,6 +40,8 @@ const bgImage =
     const handleSubmit = async (event) => {
       event.preventDefault();
       try {
+
+        console.log('esse é o values', values);
         const { data } = await axios.post(
           "http://localhost:4000/api/login",
           {
@@ -49,6 +51,7 @@ const bgImage =
         );
         if (data) {
           if (data.errors) {
+            console.log('esse é o values', values);
             const { email, password } = data.errors;
             if (email) generateError(email);
             else if (password) generateError(password);
