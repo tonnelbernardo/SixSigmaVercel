@@ -28,7 +28,7 @@ mongoose
 
 app.use(
   cors({
-    origin: ["https://six-sigma-vercel-iisk.vercel.app"],
+    origin: ["https://six-sigma-vercel-iisk.vercel.app"], // http://localhost:3000
     methods: ["GET", "POST"],
     credentials: true,
   })

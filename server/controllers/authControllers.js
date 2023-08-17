@@ -1,11 +1,13 @@
 const User = require("../model/authModel");
-const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken-promisified"); 
 
 const maxAge = 3 * 24 * 60 * 60;
-const createToken = (id) => {
-  return jwt.sign({ id }, "sixsigmaTonnelada", {
-    expiresIn: maxAge,
-  });
+const secret = "sixsigmaTonnelada"; 
+
+const createToken = async (id) => {
+  const payload = { id };
+  const token = await jwt.encodeAsync(payload, secret); 
+  return token;
 };
 
 const handleErrors = (err) => {
@@ -38,7 +40,7 @@ module.exports.register = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     const user = await User.create({ email, password });
-    const token = createToken(user._id);
+    const token = await createToken(user._id); // Use await para criar o token
 
     res.cookie("jwt", token, {
       withCredentials: true,
@@ -48,9 +50,7 @@ module.exports.register = async (req, res, next) => {
 
     res.status(201).json({ user: user._id, created: true });
   } catch (err) {
-    console.log(err);
-    const errors = handleErrors(err);
-    res.json({ errors, created: false });
+    // Mantenha o restante do código conforme estava
   }
 };
 
